@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  overflow-y: auto; /* Allows vertical scrolling when content overflows */
+}
+
+/* Ensure all elements inherit box-sizing */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Optional: If you have a main container */
+#app {
+  min-height: 100vh; /* Minimum height of full viewport */
+  width: 100%; /* Full width */
+  display: flex;
+  flex-direction: column;
+}
