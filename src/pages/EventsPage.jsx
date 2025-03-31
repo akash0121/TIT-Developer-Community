@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Code, Monitor, Globe , Clock} from 'lucide-react';
+import { Calendar, Code, Monitor, Globe, Clock } from 'lucide-react';
 import img1 from "../assets/events/web.png";
 import img2 from "../assets/events/And.png";
 import img3 from "../assets/events/ml.png";
@@ -58,7 +58,7 @@ const Events = () => {
       }
     },
     hover: {
-      scale: 1.025,
+      scale: 1.02,
       transition: { duration: 0.3 }
     }
   };
@@ -66,18 +66,18 @@ const Events = () => {
   return (
     <motion.section 
       id="events" 
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 py-20 text-white"
+      className="py-12 bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 text-green-400">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <h2 className="text-3xl font-bold text-center mb-10 text-green-400">
           Upcoming Events
         </h2>
         
         <motion.div 
-          className="space-y-8"
+          className="space-y-6"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -87,12 +87,12 @@ const Events = () => {
             return (
               <motion.div 
                 key={event.name}
-                className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-800 rounded-2xl overflow-hidden border border-green-800 hover:border-green-600 transition-all"
+                className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-gray-800 rounded-xl overflow-hidden border border-green-800 hover:border-green-600 transition-all shadow-lg"
                 variants={eventVariants}
                 whileHover="hover"
               >
                 {/* Image Section */}
-                <div className="relative">
+                <div className="relative h-48 md:h-full md:col-span-1">
                   <img 
                     src={event.img} 
                     alt={event.name} 
@@ -102,31 +102,31 @@ const Events = () => {
                 </div>
                 
                 {/* Event Details Section */}
-                <div className="p-8 flex flex-col justify-center">
-                  <div className="flex items-center mb-4">
-                    <EventIcon className="text-green-500 mr-4" size={40} />
-                    <h3 className="text-2xl font-semibold text-green-400">
+                <div className="p-4 md:p-6 flex flex-col justify-center md:col-span-2">
+                  <div className="flex items-center mb-3">
+                    <EventIcon className="text-green-500 mr-3" size={32} />
+                    <h3 className="text-xl font-semibold text-green-400">
                       {event.name}
                     </h3>
                   </div>
                   
-                  <p className="text-gray-300 mb-6">
+                  <p className="text-gray-300 mb-4 text-sm">
                     {event.desc}
                   </p>
                   
-                  <div className="space-y-2">
+                  <div className="flex flex-wrap gap-4 text-sm">
                     <div className="flex items-center text-gray-400">
-                      <Calendar className="mr-2 text-green-500" size={20} />
+                      <Calendar className="mr-2 text-green-500" size={16} />
                       <span>{event.date}</span>
                     </div>
                     <div className="flex items-center text-gray-400">
-                      <Clock className="mr-2 text-green-500" size={20} />
+                      <Clock className="mr-2 text-green-500" size={16} />
                       <span>{event.duration}</span>
                     </div>
                   </div>
                   
                   <button 
-                    className="mt-6 bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors"
+                    className="mt-4 bg-green-600 text-white px-4 py-1.5 rounded-full hover:bg-green-700 transition-colors text-sm self-start"
                   >
                     Register Now
                   </button>
